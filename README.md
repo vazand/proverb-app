@@ -32,6 +32,7 @@ Docker / packageName := "proverb-app"
 ## For running the app using docker
 
 >docker run --rm -p 9500:9500 --name myProverbApp proverb-app:1.0.1
+>
 here,
  ImageName - proverb-app:1.0.1
  ContainerName - myProverbApp

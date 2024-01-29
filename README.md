@@ -34,6 +34,22 @@ Docker / packageName := "proverb-app"
 >docker run --rm -p 9500:9500 --name myProverbApp proverb-app:1.0.1
 >
 here,
- ImageName - proverb-app:1.0.1
- ContainerName - myProverbApp
- --rm will remove the container when exit.
+  - --rm will remove the container when exit.
+  - ImageName -> proverb-app:1.0.1
+  - ContainerName -> myProverbApp
+
+
+# Continuous Integration Continuous Deployment(CICD)
+
+Here I'm using Jenkins for automating the CICD
+Continuous Integration(CI) Steps:
+
+    > Build
+    > Test
+    > Package
+    > Storing Package (ex: docker hub/nexus,github)
+
+Continuous Deployment(CD):
+
+    > Get package From Storage (ex: docker hub/nexus,github)
+    > Publish to Production Environment

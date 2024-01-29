@@ -13,5 +13,10 @@ pipeline{
                 echo "project build failed"
             }
         }
+        stage('Test'){
+            steps{
+                sh 'sbt test'
+            }
+        }
     }
 }

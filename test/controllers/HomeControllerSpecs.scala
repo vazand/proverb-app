@@ -41,7 +41,13 @@ class HomeControllerSpecs
       // I'm checking the Jenkins pipeline
       // If it fails the pipe need to be stopped.
       // will check :)
-      status(result) mustBe BAD_REQUEST
+      //status(result) mustBe BAD_REQUEST
+      // -------------------------------------
+      // it is working
+      // when the test failed Jenkins pipeline just stopped
+      // it says `Testing failed`
+      // going back to correct output
+      status(result) mustBe OK
 
     }
   }

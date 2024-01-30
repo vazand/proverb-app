@@ -34,7 +34,15 @@ class HomeControllerSpecs
       println("--------------------------------------------")
       contentType(result) mustBe Some("application/json")
       contentAsJson(result)
-      status(result) mustBe OK
+      
+      //status(result) mustBe OK
+
+      // this test need to fail "will fail"
+      // I'm checking the Jenkins pipeline
+      // If it fails the pipe need to be stopped.
+      // will check :)
+      status(result) mustBe BAD_REQUEST
+
     }
   }
 

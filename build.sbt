@@ -4,14 +4,11 @@ maintainer := "Vasanth <vazandvel@gmail.com>"
 packageName := "proverb-app"
 version := "1.0.1"
 description := {
-  """This is a sbt docker image example. 
-  available routes GET / and GET /proverbs. """
+  """This is a sbt docker image example. available routes GET / and GET /proverbs. """
 
 }
 lazy val imageDescription = {
-  """This  Dockerfile creates an image with the Proverb App running on it.
-  The app provides two endpoints: one to get all proverbs, another to get a proverb
-   """
+  """This  Dockerfile creates an image with the Proverb App running on it.The app provides two endpoints: one to get all proverbs, another to get a proverb"""
 }
 
 lazy val root = (project in file(".")).enablePlugins(

@@ -1,8 +1,18 @@
 name := """Proverb-App"""
 organization := "com.cyberxpert"
-maintainer := "vazandvel@gmail.com"
+maintainer := "Vasanth <vazandvel@gmail.com>"
+packageName := "proverb-app"
+version := "1.0.1"
+description := {
+  """This is a sbt docker image example. 
+  available routes GET / and GET /proverbs. """
 
-version := "1.0-SNAPSHOT"
+}
+lazy val imageDescription = {
+  """This  Dockerfile creates an image with the Proverb App running on it.
+  The app provides two endpoints: one to get all proverbs, another to get a proverb
+   """
+}
 
 lazy val root = (project in file(".")).enablePlugins(
   PlayScala,
@@ -22,17 +32,21 @@ dockerEnvVars ++= Map(
   ("HTTP_PORT", "9500")
 )
 
-Docker / packageName := "proverb-app"
-Docker  / version := "1.0.1"
-dockerBaseImage := "openjdk:11-jre"
-Docker / maintainer := "https://github.com/vazand"
-Docker / description := {
-  """This is a sbt docker image example. 
-  available routes GET / and GET /proverbs. """
-
-}
+Docker / packageName := packageName.value
+Docker / version := version.value
+dockerBaseImage := "eclipse-temurin:17-jdk-jammy"
+dockerExposedVolumes := Seq("/opt/docker/logs")
+Docker / defaultLinuxInstallLocation := "/opt/docker"
+dockerLabels := Map(
+  "MAINTAINER" -> maintainer.value,
+  "VENDOR" -> organization.value,
+  "DESCRIPTION" -> description.value,
+  "IMAGE_DESCRIPTION" -> imageDescription
+)
+// dockerUsername
+// mappings in Docker := mappings.value
 // Adds additional packages into Twirl
-//TwirlKeys.templateImports += "com.cyberxpert.controllers._"
+// TwirlKeys.templateImports += "com.cyberxpert.controllers._"
 
 // Adds additional packages into conf/routes
 // play.sbt.routes.RoutesKeys.routesImport += "com.cyberxpert.binders._"

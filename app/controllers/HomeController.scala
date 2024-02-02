@@ -32,7 +32,8 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents)
     "Where there is a will, there is a way.",
     "Every cloud has a silver lining.",
     "Hard work pays off.",
-    "The early bird catches the worm."
+    "The early bird catches the worm.",
+    "A GOOD DAY"
   )
 
   private val logger: Logger = Logger(this.getClass())

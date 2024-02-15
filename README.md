@@ -1,3 +1,6 @@
+# App info
+This is a proverb app. currently it contains 11 positive proverbs. we can get a random solo proverb using (GET /) and can get all of them using (GET /proverbs) as Json.   
+
 # SBT docker packaging 
 
 Here I have used [sbt-native-packager](https://www.scala-sbt.org/sbt-native-packager/) for docker packaging,

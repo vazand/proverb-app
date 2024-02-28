@@ -25,6 +25,14 @@ dockerEnvVars ++= Map(
   ("HTTP_PORT", "9500")
 )
 
+
+**Notes:**
+  > here we're declared APPLICATION_SECRET as an env and you can see it in the build.sbt
+  > but it's not a good Idea when creating a production version from this docker image.
+  > when creating production version of docker image from this, delete the APPLICATION_SECRET from dockerEnvVars in build.sbt. 
+  > and when running the image we have to declare that environment variable.
+  > ex: `docker run -it -p80:9500 -e APPLICATION_SECRET=sdfasdfHEGSHDKSDKSDHKHSKDKSDSKJDSJDHHSDSAHAHAH --name=proverbContainer proverb-app:1.0.1`
+
 ### other docker configs (in build.sbt)
 
 dockerBaseImage := "openjdk:11-jre"
